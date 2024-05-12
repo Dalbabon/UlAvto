@@ -59,4 +59,6 @@ dependencies {
     kapt (libs.roomCompiler)
     implementation(libs.roomLivedata)
     implementation(libs.roomKtx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.lifecycleViewmodelKtx)
 }

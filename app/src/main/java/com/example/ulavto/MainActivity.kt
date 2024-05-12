@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.asLiveData
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.ulavto.adapter.ItemParts
+import com.example.ulavto.adapter.PartsAdapter
 import com.example.ulavto.databinding.ActivityMainBinding
 import com.example.ulavto.db.Item
 import com.example.ulavto.db.MainDb
@@ -263,17 +266,6 @@ class MainActivity : AppCompatActivity() {
                 }.start()
 
 
-            }
-            else{
-                it.forEach{it1 ->
-                    //val itemNarod = ItemNarod(it1.id,
-                      //  it1.nameN,
-                        //it1.description,
-                        //it1.avatarUrl,
-                        //it1.favorite)
-
-                   // adapter.addItemNarod(itemNarod)
-                }
             }
         }
     }
