@@ -6,9 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.asLiveData
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.ulavto.adapter.ItemParts
-import com.example.ulavto.adapter.PartsAdapter
 import com.example.ulavto.databinding.ActivityMainBinding
 import com.example.ulavto.db.Item
 import com.example.ulavto.db.MainDb
