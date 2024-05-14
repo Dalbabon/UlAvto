@@ -16,6 +16,7 @@ import com.example.ulavto.fragments.MenuFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    var resume: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,21 +30,41 @@ class MainActivity : AppCompatActivity() {
 
         binding.menuButton.setOnClickListener{
             supportFragmentManager.beginTransaction().replace(R.id.place_holder, MenuFragment.newInstance()).commit()
+            binding.menuButton.setImageResource(R.drawable.menu_button_act)
+            binding.cartButton.setImageResource(R.drawable.cart_button)
+            binding.favoriteButton.setImageResource(R.drawable.favorite_button)
+            binding.aboutButton.setImageResource(R.drawable.about_button)
         }
 
         binding.cartButton.setOnClickListener{
             supportFragmentManager.beginTransaction().replace(R.id.place_holder, CartFragment.newInstance()).commit()
+            binding.menuButton.setImageResource(R.drawable.menu_button)
+            binding.cartButton.setImageResource(R.drawable.cart_button_act)
+            binding.favoriteButton.setImageResource(R.drawable.favorite_button)
+            binding.aboutButton.setImageResource(R.drawable.about_button)
         }
 
         binding.favoriteButton.setOnClickListener{
             supportFragmentManager.beginTransaction().replace(R.id.place_holder, FavoriteFragment.newInstance()).commit()
+            binding.menuButton.setImageResource(R.drawable.menu_button)
+            binding.cartButton.setImageResource(R.drawable.cart_button)
+            binding.favoriteButton.setImageResource(R.drawable.favorite_button_act)
+            binding.aboutButton.setImageResource(R.drawable.about_button)
         }
 
         binding.aboutButton.setOnClickListener{
             supportFragmentManager.beginTransaction().replace(R.id.place_holder, AboutFragment.newInstance()).commit()
+            binding.menuButton.setImageResource(R.drawable.menu_button)
+            binding.cartButton.setImageResource(R.drawable.cart_button)
+            binding.favoriteButton.setImageResource(R.drawable.favorite_button)
+            binding.aboutButton.setImageResource(R.drawable.about_button_act)
         }
 
         supportFragmentManager.beginTransaction().replace(R.id.place_holder, MenuFragment.newInstance()).commit()
+        binding.menuButton.setImageResource(R.drawable.menu_button_act)
+        binding.cartButton.setImageResource(R.drawable.cart_button)
+        binding.favoriteButton.setImageResource(R.drawable.favorite_button)
+        binding.aboutButton.setImageResource(R.drawable.about_button)
 
 
         val db = MainDb.getDb(this)
@@ -266,4 +287,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    //override fun onResume() {
+        //super.onResume()
+        //if(resume){
+            //resume = false
+            //recreate()
+        //}
+
+    //}
 }

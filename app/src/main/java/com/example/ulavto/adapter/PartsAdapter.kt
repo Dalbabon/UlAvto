@@ -1,11 +1,13 @@
 package com.example.ulavto.adapter
 
+import android.R.attr.data
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ulavto.R
 import com.example.ulavto.databinding.PartsItemBinding
+
 
 class PartsAdapter(val listener: Listener): RecyclerView.Adapter<PartsAdapter.PartsHolder>(){
     val itemPartsList = ArrayList<ItemParts>()
@@ -42,6 +44,11 @@ class PartsAdapter(val listener: Listener): RecyclerView.Adapter<PartsAdapter.Pa
     fun addParts(itemParts: ItemParts){
         itemPartsList.add(itemParts)
         notifyDataSetChanged()
+    }
+    fun clear() {
+        val size: Int = itemPartsList.size
+        itemPartsList.clear()
+        notifyItemRangeRemoved(0, size)
     }
 
     interface Listener{

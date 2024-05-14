@@ -1,5 +1,6 @@
 package com.example.ulavto.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.ulavto.ContentActivity
 import com.example.ulavto.adapter.ItemParts
 import com.example.ulavto.adapter.PartsAdapter
 import com.example.ulavto.databinding.FragmentFavoriteBinding
@@ -70,6 +72,9 @@ class FavoriteFragment : Fragment(), PartsAdapter.Listener {
 
     override fun onClick(itemParts: ItemParts) {
         // Implement your logic here
+        startActivity(Intent(requireActivity(), ContentActivity::class.java).apply {
+            putExtra("item", itemParts)
+        })
     }
 
     companion object {

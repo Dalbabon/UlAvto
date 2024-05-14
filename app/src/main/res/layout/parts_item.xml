@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="170dp">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/im"
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
@@ -41,12 +41,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/logo_eng" />
+                    app:srcCompat="@drawable/logo_eng"
+                    app:shapeAppearance="@style/roundedYes"/>
 
                 <ImageView
                     android:id="@+id/imFav"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/im"
                     app:layout_constraintHorizontal_bias="0.96"
